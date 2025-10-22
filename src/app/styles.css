@@ -153,6 +153,46 @@
   color: transparent;
 }
 
+/* RestaurantCard Component */
+.restaurantCard{
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.imageCard {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+.restaurantInfo {
+  padding: 1rem; 
+  width: 100%;
+  height: 70px;
+  position: relative;
+  z-index: 1;
+}
+.cardHeartIcon {
+  position: absolute;
+  top: 1.5rem;
+  right: 1rem;
+  cursor: pointer;
+  transition: color 0.2s, fill 0.2s;
+  z-index: 92;
+  width: 24px;
+  height: 24px;
+
+}
+
+.restaurantCardName {
+  font-size: 1.25rem;
+}
+.restaurantPlace {
+  font-size: 0.875rem;
+}
+
 /* Menu Item Component */
 @keyframes appearFromBottom {
   0% {
