@@ -5,29 +5,30 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart as faHeartRegular} from '@fortawesome/free-regular-svg-icons';
 import { faHeart as faHeartSolid} from '@fortawesome/free-solid-svg-icons';
 import { useState } from 'react';
+import Link from 'next/link';
 
 
-export default function RestaurantCard({ restaurant }) {
+export default function RestaurantCard({ restaurant, slug }) {
 	const [like, setLike] = useState(false);
 	const toggleLike = () => {
 		setLike(!like);
 	}
   return (
-    <div className="restaurantCard">
-	 <img src={restaurant.img} alt={restaurant.name} className="imageCard" />
-	 <div className="restaurantInfo">
-	   <h4 className="restaurantCardName">{restaurant.name}</h4>
-	   <p className="restaurantPlace">{restaurant.place}</p>
-	   {/* <p className="restaurantRating">Rating: {restaurant.rating}</p> */}
-	   <div className="cardHeartIcon" onClick={toggleLike}>
-			 <FontAwesomeIcon 
-			 icon={like ? faHeartSolid : faHeartRegular}
-			 style={{
-			  color: like ? '#FF79DA' : 'black',
-			 }} />
+	<Link href={`/restaurant/${restaurant.slug}`}>
+		<div className="restaurantCard">
+			<img src={restaurant.image} alt={restaurant.name} className="imageCard" />
+			<div className="restaurantInfo">
+			<h4 className="restaurantCardName">{restaurant.name}</h4>
+			<p className="restaurantPlace">{restaurant.location}</p>
+			<div className="cardHeartIcon" onClick={toggleLike}>
+					<FontAwesomeIcon 
+					icon={like ? faHeartSolid : faHeartRegular}
+					style={{
+					color: like ? '#FF79DA' : 'black',
+					}} />
+				</div>
+			</div>
 		</div>
-
-	 </div>
-    </div>
+    </Link>
   );      
 }

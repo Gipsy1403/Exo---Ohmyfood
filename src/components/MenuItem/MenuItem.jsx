@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleCheck } from '@fortawesome/free-solid-svg-icons';
 
 export default function MenuItem({ item, index }) {
+
   return (
     <div className="menuItem" data-index={index}>
       <div className="menuItemContent">
